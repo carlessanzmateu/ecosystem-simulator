@@ -1,0 +1,25 @@
+{
+  "name": "ecosystem-simulator",
+  "version": "0.0.0",
+  "description": "Ecosystem simulator in node js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "ecosystem",
+    "simulator"
+  ],
+  "author": "@carlessanzmateu",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0"
+  }
+}
