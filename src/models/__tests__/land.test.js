@@ -223,4 +223,249 @@ describe('Land', () => {
 
     expect(land.getMineralsLength()).toBe(1)
   })
+
+  it('should have getMineralsLimit method', () => {
+    const land = new Land()
+
+    expect(land.getMineralsLimit).toBeTruthy()
+  })
+
+  it('should return _mineralsLimit length when call getMineralsLimit', () => {
+    const land = new Land()
+    land._mineralsLimit = 100
+
+    expect(land.getMineralsLimit()).toBe(100)
+  })
+
+  it('should have setMineralsLimit method', () => {
+    const land = new Land()
+
+    expect(land.setMineralsLimit).toBeTruthy()
+  })
+
+  it('should set _mineralsLimit when call setMinerals', () => {
+    const land = new Land()
+    
+    land._mineralsLimit = 100
+    land.setMineralsLimit(5)
+
+    expect(land._mineralsLimit).toEqual(5)
+  })
+
+  it('should have isMineralsOverMineralsLimit method', () => {
+    const land = new Land()
+
+    expect(land.isMineralsOverMineralsLimit).toBeTruthy()
+  })
+
+  it('should detect when minerals length is higher than _mineralsLimit', () => {
+    const land = new Land()
+    land.setMinerals(['foo', 'bar', 'quz'])
+    land.setMineralsLimit(2)
+
+    expect(land.isMineralsOverMineralsLimit()).toBe(true)
+  })
+
+  it('should detect when minerals length is not higher than _mineralsLimit', () => {
+    const land = new Land()
+    land.setMinerals(['foo', 'bar', 'quz'])
+    land.setMineralsLimit(10)
+
+    expect(land.isMineralsOverMineralsLimit()).toBe(false)
+  })
+
+  it('should have getAnimals method', () => {
+    const land = new Land()
+
+    expect(land.getAnimals).toBeTruthy()
+  })
+
+  it('should return _animals when call getAnimals', () => {
+    const land = new Land()
+    const animalsMock = ['wolf']
+    land._animals = animalsMock
+
+    expect(land.getAnimals()).toBe(animalsMock)
+  })
+
+  it('should have setAnimals method', () => {
+    const land = new Land()
+
+    expect(land.setAnimals).toBeTruthy()
+  })
+
+  it('should set _animals when call setAnimals', () => {
+    const land = new Land()
+    const expectedAnimalsMock = ['wolf']
+    
+    land._animals = ['rabbit']
+    land.setAnimals(expectedAnimalsMock)
+
+    expect(land._animals).toEqual(expectedAnimalsMock)
+  })
+
+  it('should have getAnimalsLength method', () => {
+    const land = new Land()
+
+    expect(land.getAnimalsLength).toBeTruthy()
+  })
+
+  it('should return animals length when call getAnimalsLength', () => {
+    const land = new Land()
+    land._animals = ['wolf']
+
+    expect(land.getAnimalsLength()).toBe(1)
+  })
+
+  it('should have getAnimalsLimit method', () => {
+    const land = new Land()
+
+    expect(land.getAnimalsLimit).toBeTruthy()
+  })
+
+  it('should return _animalsLimit when call getAnimalsLimit', () => {
+    const land = new Land()
+    land._animalsLimit = 100
+
+    expect(land.getAnimalsLimit()).toBe(100)
+  })
+
+  it('should have setAnimalsLimit method', () => {
+    const land = new Land()
+
+    expect(land.setAnimalsLimit).toBeTruthy()
+  })
+
+  it('should set _animalsLimit when call setAnimalsLimit', () => {
+    const land = new Land()
+    const expectedAnimalsLimitMock = 100
+    
+    land._animalsLimit = 15
+    land.setAnimalsLimit(expectedAnimalsLimitMock)
+
+    expect(land._animalsLimit).toEqual(expectedAnimalsLimitMock)
+  })
+
+  it('should have isAnimalsOverAnimalsLimit method', () => {
+    const land = new Land()
+
+    expect(land.isAnimalsOverAnimalsLimit).toBeTruthy()
+  })
+
+  it('should detect when animals length is higher than _animalsLimit', () => {
+    const land = new Land()
+    land.setAnimals(['foo', 'bar', 'quz'])
+    land.setAnimalsLimit(2)
+
+    expect(land.isAnimalsOverAnimalsLimit()).toBe(true)
+  })
+
+  it('should detect when animals length is not higher than _animalsLimit', () => {
+    const land = new Land()
+    land.setAnimals(['foo', 'bar', 'quz'])
+    land.setAnimalsLimit(10)
+
+    expect(land.isAnimalsOverAnimalsLimit()).toBe(false)
+  })
+
+  it('should have getContaminationIndex method', () => {
+    const land = new Land()
+
+    expect(land.getContaminationIndex).toBeTruthy()
+  })
+
+  it('should return _contaminationIndex when call getContaminationIndex', () => {
+    const land = new Land()
+    land._contaminationIndex = 100
+
+    expect(land.getContaminationIndex()).toBe(100)
+  })
+
+  it('should have setContaminationIndex method', () => {
+    const land = new Land()
+
+    expect(land.setContaminationIndex).toBeTruthy()
+  })
+
+  it('should set _contaminationIndex when call setContaminationIndex', () => {
+    const land = new Land()
+    const expectedContaminationIndexMock = 100
+    
+    land._contaminationIndex = 15
+    land.setContaminationIndex(expectedContaminationIndexMock)
+
+    expect(land._contaminationIndex).toEqual(expectedContaminationIndexMock)
+  })
+
+  it('should have getIsConstructable method', () => {
+    const land = new Land()
+
+    expect(land.getIsConstructable).toBeTruthy()
+  })
+
+  it('should return _isConstructable when call getIsConstructable', () => {
+    const land = new Land()
+    land._isConstructable = true
+
+    expect(land.getIsConstructable()).toBe(true)
+  })
+
+  it('should have setIsConstructable method', () => {
+    const land = new Land()
+
+    expect(land.setIsConstructable).toBeTruthy()
+  })
+
+  it('should set _isConstructable when call setIsConstructable', () => {
+    const land = new Land()
+    const expectedIsConstructableMock = true
+    
+    land._isConstructable = false
+    land.setIsConstructable(expectedIsConstructableMock)
+
+    expect(land._isConstructable).toEqual(expectedIsConstructableMock)
+  })
+
+  it('should have getBuildings method', () => {
+    const land = new Land()
+
+    expect(land.getBuildings).toBeTruthy()
+  })
+
+  it('should return _buildings when call getBuildings', () => {
+    const land = new Land()
+    const mockBuildings = ['farm']
+    land._buildings = mockBuildings
+
+    expect(land.getBuildings()).toEqual(mockBuildings)
+  })
+
+  it('should have setBuildings method', () => {
+    const land = new Land()
+
+    expect(land.setBuildings).toBeTruthy()
+  })
+
+  it('should set _buildings when call setBuildings', () => {
+    const land = new Land()
+    const expectedBuildingsMock = ['farm']
+    
+    land._buildings = ['inn']
+    land.setBuildings(expectedBuildingsMock)
+
+    expect(land._buildings).toEqual(expectedBuildingsMock)
+  })
+
+  it('should have getBuildingsLength method', () => {
+    const land = new Land()
+
+    expect(land.getBuildingsLength).toBeTruthy()
+  })
+
+  it('should return buildings length when call getBuildingsLength', () => {
+    const land = new Land()
+    land._buildings = ['farm']
+
+    expect(land.getBuildingsLength()).toBe(1)
+  })
 })

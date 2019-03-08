@@ -7,12 +7,12 @@ class Land {
     this._vegetation = []
     this._vegetationLimit = 10 
     this._minerals = []
-    //untested
     this._mineralsLimit = 10
     this._animals = []
     this._animalsLimit = 10
     this._contaminationIndex = 0
     this._isConstructable = true
+    //untested
     this._buildings = []
     this._buildingsLimit = []
     this._isHumanHabitable = true
@@ -65,7 +65,7 @@ class Land {
   }
 
   isVegetationOverVegetationLimit() {
-    return this.getVegetationLength() > this._vegetationLimit
+    return this.getVegetationLength() > this.getVegetationLimit()
   }
 
   getMinerals() {
@@ -78,6 +78,70 @@ class Land {
 
   getMineralsLength() {
     return this._minerals.length
+  }
+
+  getMineralsLimit() {
+    return this._mineralsLimit
+  }
+
+  setMineralsLimit(mineralsLimit) {
+    this._mineralsLimit = mineralsLimit
+  }
+
+  isMineralsOverMineralsLimit() {
+    return this.getMineralsLength() > this.getMineralsLimit()
+  }
+
+  getAnimals() {
+    return this._animals
+  }
+
+  setAnimals(animals) {
+    this._animals = animals
+  }
+
+  getAnimalsLength() {
+    return this._animals.length
+  }
+
+  getAnimalsLimit() {
+    return this._animalsLimit
+  }
+
+  setAnimalsLimit(animalsLimit) {
+    this._animalsLimit = animalsLimit
+  }
+
+  isAnimalsOverAnimalsLimit() {
+    return this.getAnimalsLength() > this.getAnimalsLimit()
+  }
+
+  getContaminationIndex() {
+    return this._contaminationIndex
+  }
+
+  setContaminationIndex(contaminationIndex) {
+    this._contaminationIndex = contaminationIndex
+  }
+
+  getIsConstructable() {
+    return this._isConstructable
+  }
+
+  setIsConstructable(isConstructable) {
+    this._isConstructable = isConstructable
+  }
+
+  getBuildings() {
+    return this._buildings
+  }
+
+  setBuildings(buildings) {
+    this._buildings = buildings
+  }
+
+  getBuildingsLength() {
+    return this._buildings.length
   }
 }
 
