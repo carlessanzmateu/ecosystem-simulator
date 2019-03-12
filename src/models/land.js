@@ -166,6 +166,18 @@ class Land {
   getHumansLength() {
     return this._humans.length
   }
+
+  getHumansLimit() {
+    return this._humansLimit
+  }
+
+  setHumansLimit(humansLimit) {
+    this._humansLimit = humansLimit
+  }
+
+  isHumansOverHumansLimit() {
+    return this.getHumansLength() > this.getHumansLimit()
+  }
 }
 
 module.exports = Land

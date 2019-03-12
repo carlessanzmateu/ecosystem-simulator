@@ -562,4 +562,57 @@ describe('Land', () => {
 
     expect(land.getHumansLength()).toBe(1)
   })
+
+  it('should have getHumansLimit method', () => {
+    const land = new Land()
+
+    expect(land.getHumansLimit).toBeTruthy()
+  })
+
+  it('should return _humansLimit when call getHumansLimit', () => {
+    const land = new Land()
+    const expectedHumansLimitMock = 100
+    land._humansLimit = expectedHumansLimitMock
+
+    expect(land.getHumansLimit()).toBe(expectedHumansLimitMock)
+  })
+
+  it('should have setHumansLimit method', () => {
+    const land = new Land()
+
+    expect(land.setHumansLimit).toBeTruthy()
+  })
+
+  it('should set _humansLimit when call setHumansLimit', () => {
+    const land = new Land()
+    const expectedHumansLimitMock = 123
+    
+    land._humansLimit = 789
+    land.setHumansLimit(expectedHumansLimitMock)
+
+    expect(land._humansLimit).toEqual(expectedHumansLimitMock)
+  })
+
+  it('should have isHumansOverHumansLimit method', () => {
+    const land = new Land()
+
+    expect(land.isHumansOverHumansLimit).toBeTruthy()
+  })
+
+  it('should detect when humans length is higher than _humansLimit', () => {
+    const land = new Land()
+    land.setHumans(['foo', 'bar', 'quz'])
+    land.setHumansLimit(2)
+
+    expect(land.isHumansOverHumansLimit()).toBe(true)
+  })
+
+  it('should detect when humans length is not higher than _humansLimit', () => {
+    const land = new Land()
+    land.setHumans(['foo', 'bar', 'quz'])
+    land.setHumansLimit(10)
+
+    expect(land.isHumansOverHumansLimit()).toBe(false)
+  })
 })
+
