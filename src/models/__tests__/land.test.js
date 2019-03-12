@@ -468,4 +468,55 @@ describe('Land', () => {
 
     expect(land.getBuildingsLength()).toBe(1)
   })
+
+  it('should have getBuildingsLimit method', () => {
+    const land = new Land()
+
+    expect(land.getBuildingsLimit).toBeTruthy()
+  })
+
+  it('should return _buildingsLimit when call getBuildingsLimit', () => {
+    const land = new Land()
+    land._buildingsLimit = 100
+
+    expect(land.getBuildingsLimit()).toBe(100)
+  })
+
+  it('should have setBuildingsLimit method', () => {
+    const land = new Land()
+
+    expect(land.setBuildingsLimit).toBeTruthy()
+  })
+
+  it('should set _buildingsLimit when call setBuildingsLimit', () => {
+    const land = new Land()
+    const expectedBuildingsLimitMock = 123
+    
+    land._buildingsLimit = 789
+    land.setBuildingsLimit(expectedBuildingsLimitMock)
+
+    expect(land._buildingsLimit).toEqual(expectedBuildingsLimitMock)
+  })
+
+  it('should have isBuildingsOverBuildingsLimit method', () => {
+    const land = new Land()
+
+    expect(land.isBuildingsOverBuildingsLimit).toBeTruthy()
+  })
+
+  it('should detect when buildings length is higher than _buildingsLimit', () => {
+    const land = new Land()
+    land.setBuildings(['foo', 'bar', 'quz'])
+    land.setBuildingsLimit(2)
+
+    expect(land.isBuildingsOverBuildingsLimit()).toBe(true)
+  })
+
+  it('should detect when buildings length is not higher than _buildingsLimit', () => {
+    const land = new Land()
+    land.setBuildings(['foo', 'bar', 'quz'])
+    land.setBuildingsLimit(10)
+
+    expect(land.isBuildingsOverBuildingsLimit()).toBe(false)
+  })
 })

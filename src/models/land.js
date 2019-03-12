@@ -12,9 +12,9 @@ class Land {
     this._animalsLimit = 10
     this._contaminationIndex = 0
     this._isConstructable = true
-    //untested
     this._buildings = []
     this._buildingsLimit = []
+    //untested
     this._isHumanHabitable = true
     this._humans = []
     this._humansLimit = 10
@@ -142,6 +142,18 @@ class Land {
 
   getBuildingsLength() {
     return this._buildings.length
+  }
+  
+  getBuildingsLimit() {
+    return this._buildingsLimit
+  }
+
+  setBuildingsLimit(buildingsLimit) {
+    this._buildingsLimit = buildingsLimit
+  }
+
+  isBuildingsOverBuildingsLimit() {
+    return this.getBuildingsLength() > this.getBuildingsLimit()
   }
 }
 
