@@ -519,4 +519,47 @@ describe('Land', () => {
 
     expect(land.isBuildingsOverBuildingsLimit()).toBe(false)
   })
+
+  it('should have getHumans method', () => {
+    const land = new Land()
+
+    expect(land.getHumans).toBeTruthy()
+  })
+
+  it('should return _humans when call getHumans', () => {
+    const land = new Land()
+    const humansMock = ['Aragorn']
+    land._humans = humansMock
+
+    expect(land.getHumans()).toBe(humansMock)
+  })
+
+  it('should have setHumans method', () => {
+    const land = new Land()
+
+    expect(land.setHumans).toBeTruthy()
+  })
+
+  it('should set _humans when call setHumans', () => {
+    const land = new Land()
+    const expectedHumansMock = ['Aragorn']
+    
+    land._buildingsLimit = ['Gandalf']
+    land.setHumans(expectedHumansMock)
+
+    expect(land._humans).toEqual(expectedHumansMock)
+  })
+
+  it('should have getHumansLength method', () => {
+    const land = new Land()
+
+    expect(land.getHumansLength).toBeTruthy()
+  })
+
+  it('should return humans length when call getHumansLength method', () => {
+    const land = new Land()
+    land._humans = ['Frodo']
+
+    expect(land.getHumansLength()).toBe(1)
+  })
 })

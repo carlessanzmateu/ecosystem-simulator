@@ -14,9 +14,8 @@ class Land {
     this._isConstructable = true
     this._buildings = []
     this._buildingsLimit = []
-    //untested
-    this._isHumanHabitable = true
     this._humans = []
+    //untested
     this._humansLimit = 10
   }
 
@@ -154,6 +153,18 @@ class Land {
 
   isBuildingsOverBuildingsLimit() {
     return this.getBuildingsLength() > this.getBuildingsLimit()
+  }
+
+  getHumans() {
+    return this._humans
+  }
+
+  setHumans(humans) {
+    return this._humans = humans
+  }
+
+  getHumansLength() {
+    return this._humans.length
   }
 }
 
