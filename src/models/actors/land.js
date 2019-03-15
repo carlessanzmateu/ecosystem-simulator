@@ -15,7 +15,6 @@ class Land {
     this._buildings = []
     this._buildingsLimit = []
     this._humans = []
-    //untested
     this._humansLimit = 10
   }
 
