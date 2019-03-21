@@ -1,7 +1,5 @@
-const Land = require('../../models/actors/land.js')
+const Biome = require('../../models/actors/biome.js')
 
-const StaticSimpleWorld = [4]
-
-StaticSimpleWorld[0] = [new Land(), new Land()]
+const StaticSimpleWorld = [new Biome(), new Biome()]
 
 module.exports = StaticSimpleWorld

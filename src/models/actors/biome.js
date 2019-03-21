@@ -1,21 +1,24 @@
-class Land {
+class Biome {
   constructor() {
-    this._isCultivable = true
-    this._cultivableIndex = 50
-    this._cultivableDegradation = 1
-    this._cultivableRegeneration = 1
-    this._vegetation = []
-    this._vegetationLimit = 10 
-    this._minerals = []
-    this._mineralsLimit = 10
-    this._animals = []
-    this._animalsLimit = 10
-    this._contaminationIndex = 0
-    this._isConstructable = true
-    this._buildings = []
-    this._buildingsLimit = []
-    this._humans = []
-    this._humansLimit = 10
+    this._isCultivable = undefined
+    this._cultivableIndex = undefined
+    this._cultivableDegradation = undefined
+    this._cultivableRegeneration = undefined
+    this._vegetation = undefined
+    this._vegetationLimit = undefined
+    this._minerals = undefined
+    this._mineralsLimit = undefined
+    this._animals = undefined
+    this._animalsLimit = undefined
+    this._contaminationIndex = undefined
+    this._isConstructable = undefined
+    this._buildings = undefined
+    this._buildingsLimit = undefined
+    this._humans = undefined
+    this._humansLimit = undefined
+    this._hasWaterSources = undefined
+    this._waterSources = undefined
+    this._temperature = undefined
   }
 
   getIsCultivable() {
@@ -177,6 +180,30 @@ class Land {
   isHumansOverHumansLimit() {
     return this.getHumansLength() > this.getHumansLimit()
   }
+
+  getHasWaterSources() {
+    return this._hasWaterSources
+  }
+
+  setHasWaterSources(hasWaterSources) {
+    this._hasWaterSources = hasWaterSources
+  }
+
+  getWaterSources() {
+    return this._waterSources
+  }
+
+  setWaterSources(waterSources) {
+    this._waterSources = waterSources
+  }
+
+  getTemperature() {
+    return this._temperature
+  }
+
+  setTemperature(temperature) {
+    this._temperature = temperature
+  }
 }
 
-module.exports = Land
+module.exports = Biome
