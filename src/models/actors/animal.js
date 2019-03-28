@@ -11,8 +11,14 @@ class Animal {
     this._breedings = []
   }
 
-  getTimeToDeath() {}
-  setTimeToDeath() {}
+  getTimeToDeath() {
+    return this._timeToDeath
+  }
+
+  setTimeToDeath(timeToDeath) {
+    this._timeToDeath = timeToDeath
+  }
+  
   getGender() {}
   setGender() {}
   getIsFertile() {}
