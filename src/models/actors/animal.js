@@ -19,8 +19,14 @@ class Animal {
     this._timeToDeath = timeToDeath
   }
   
-  getGender() {}
-  setGender() {}
+  getGender() {
+    return this._gender
+  }
+
+  setGender(gender) {
+    this._gender = gender
+  }
+
   getIsFertile() {}
   setIsFertile() {}
   getEnergyIndex() {}
